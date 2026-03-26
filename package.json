@@ -1,0 +1,62 @@
+{
+  "name": "@rodang/thumbnail-maker",
+  "version": "0.1.0",
+  "description": "AI-powered thumbnail generator for blogs, CMS, and content platforms",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "ai-thumbnail": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PLAN.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "thumbnail",
+    "ai",
+    "image-generation",
+    "notion",
+    "blog",
+    "cms",
+    "fal-ai",
+    "flux"
+  ],
+  "author": "Rodang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jungjin/thumbnail-maker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jungjin/thumbnail-maker/issues"
+  },
+  "homepage": "https://github.com/jungjin/thumbnail-maker#readme",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.37",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^1.6.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
