@@ -6,17 +6,17 @@ export default defineConfig({
     cli: 'src/cli.ts'
   },
   format: ['cjs', 'esm'],
-  dts: true,
+  dts: {
+    entry: 'src/index.ts'
+  },
   splitting: false,
   sourcemap: true,
   clean: true,
   shims: true,
-  banner: {
-    js: (context) => {
-      if (context.format === 'esm' && context.path.includes('cli')) {
-        return '#!/usr/bin/env node\n'
-      }
-      return ''
+  esbuildOptions: (options, context) => {
+    if (context.format === 'esm') {
+      options.banner = options.banner || {}
+      options.banner.js = '#!/usr/bin/env node\n'
     }
   }
 })
