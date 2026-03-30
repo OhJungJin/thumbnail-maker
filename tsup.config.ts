@@ -14,7 +14,7 @@ export default defineConfig({
   clean: true,
   shims: true,
   esbuildOptions: (options, context) => {
-    if (context.format === 'esm') {
+    if (context.format === 'cjs') {
       options.banner = options.banner || {}
       options.banner.js = '#!/usr/bin/env node\n'
     }
